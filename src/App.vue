@@ -1,17 +1,18 @@
 <script setup>
-  const title = 'Vue Basics';
+  import { RouterLink, RouterView } from 'vue-router'
 </script>
 
 <template>
-  <main>
-  <h1>{{title}}</h1>
-  <p> My first component </p>
-  </main>
+  <header class="header">
+    <nav class="nav">
+      <RouterLink to="/">Home</RouterLink>
+      <RouterLink to="/posts">Posts</RouterLink>
+    </nav>
+  </header>
+    <RouterView />
 </template>
 
 <style scoped>
-main {
-  padding: 2rem;
-  font-family: system-ui, sans-serif;
-}
+  .header { padding: 1rem 2rem; border-bottom: 1px solid #eee; }
+  .nav { display: flex; gap: 1rem; font-family: system-ui, sans-serif; }
 </style>
