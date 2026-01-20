@@ -1,6 +1,7 @@
 <script setup>
     import { onMounted, ref } from 'vue'
     import { getPosts } from '@/services/api'
+    import { RouterLink } from 'vue-router'
 
     const posts = ref([])
     const isLoading = ref(true)
@@ -26,7 +27,9 @@
 
     <ul v-else class="list">
         <li v-for="post in posts" :key="post.id">
+            <RouterLink :to="`/posts/${post.id}`">
         {{ post.title }}
+            </RouterLink>
         </li>
     </ul>
   </main>
