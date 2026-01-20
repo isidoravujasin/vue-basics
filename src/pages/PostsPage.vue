@@ -3,6 +3,8 @@
     import { getPosts } from '@/services/api'
     import { RouterLink } from 'vue-router'
 
+    import PostList from '@/components/PostList.vue'
+
     const posts = ref([])
     const isLoading = ref(true)
     const error = ref(null)
@@ -25,13 +27,7 @@
   <p v-if="isLoading"> Loading... </p>
   <p v-else-if="error" class="error"> Error: {{ error }} </p>
 
-    <ul v-else class="list">
-        <li v-for="post in posts" :key="post.id">
-            <RouterLink :to="`/posts/${post.id}`">
-        {{ post.title }}
-            </RouterLink>
-        </li>
-    </ul>
+  <PostList v-else :posts="posts" />
   </main>
 </template>
 
