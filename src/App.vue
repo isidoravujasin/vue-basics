@@ -1,11 +1,17 @@
-<script setup></script>
+<script setup>
+  const title = 'Vue Basics';
+</script>
 
 <template>
-  <h1>You did it!</h1>
-  <p>
-    Visit <a href="https://vuejs.org/" target="_blank" rel="noopener">vuejs.org</a> to read the
-    documentation
-  </p>
+  <main>
+  <h1>{{title}}</h1>
+  <p> My first component </p>
+  </main>
 </template>
 
-<style scoped></style>
+<style scoped>
+main {
+  padding: 2rem;
+  font-family: system-ui, sans-serif;
+}
+</style>
